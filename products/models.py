@@ -2,9 +2,11 @@ from django.db import models
 
 # Create your models here.
 
+
 class Tag(models.Model):
     name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(unique=True)
+
 
 class Item(models.Model):
     name = models.CharField(max_length=100, unique=True)
