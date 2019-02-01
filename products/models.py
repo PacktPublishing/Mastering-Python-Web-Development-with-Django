@@ -8,7 +8,7 @@ class Tag(models.Model):
     slug = models.SlugField(unique=True)
 
     def __str__(self):
-        return "{} ({})".format(self.name, self.slug)
+        return self.name
 
 
 class Item(models.Model):
