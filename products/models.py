@@ -8,7 +8,9 @@ class Tag(models.Model):
     slug = models.SlugField(unique=True)
 
     def __str__(self):
-        return self.name
+        if self.name:
+            return self.name
+        return super().__str__()
 
 
 class Item(models.Model):
