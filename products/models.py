@@ -15,7 +15,7 @@ class Tag(models.Model):
 
 class Item(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    url = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True)
     description = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to="images", blank=True, null=True)
     tags = models.ManyToManyField(Tag)
