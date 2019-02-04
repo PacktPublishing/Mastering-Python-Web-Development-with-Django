@@ -21,3 +21,8 @@ class Item(models.Model):
     tags = models.ManyToManyField(Tag)
     price = models.DecimalField(max_digits=12, decimal_places=2)
     show_on_website = models.BooleanField(default=False)
+
+    def __str__(self):
+        if self.name:
+            return self.name
+        return super().__str__()
