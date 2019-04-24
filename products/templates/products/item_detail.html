@@ -7,7 +7,9 @@
 <body>
 	<h1>{{ item.name }}</h1>
 	<ul>
-		<li>A Category</li>
+	{% for tag in item.tags.all %}
+		<li>{{ tag.name }}</li>
+	{% endfor %}
 	</ul>
 	<p>{{ item.description }}</p>
 	<img src="https://raw.githubusercontent.com/PacktPublishing/Mastering-Python-Web-Development-with-Django/master/content/chapter_3/images/placeholder.jpg" alt="Placeholder Image">
