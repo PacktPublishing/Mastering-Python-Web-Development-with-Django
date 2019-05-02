@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from .models import Item
 
 class ItemListView(ListView):
+	context_object_name = 'items'
 	model = Item
 
 
