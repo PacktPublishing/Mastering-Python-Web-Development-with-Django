@@ -8,6 +8,10 @@ class ItemListView(ListView):
 	model = Item
 
 
+class TaggedItemListView(ItemListView):
+	pass
+
+
 def item_detail(request, item_slug):
 	item = get_object_or_404(Item, slug=item_slug)
 	context = {
