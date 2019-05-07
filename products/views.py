@@ -13,7 +13,6 @@ class TaggedItemListView(ItemListView):
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
-		assert False, context
 		return context
 
 
