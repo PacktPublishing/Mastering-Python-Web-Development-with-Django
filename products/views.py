@@ -9,7 +9,7 @@ class ItemListView(ListView):
 
 
 class TaggedItemListView(ItemListView):
-	pass
+	template_name = "products/item_tag.html"
 
 
 def item_detail(request, item_slug):
