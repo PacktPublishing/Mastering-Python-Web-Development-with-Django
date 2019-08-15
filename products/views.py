@@ -18,6 +18,7 @@ class TaggedItemListView(ItemListView):
         items = context["items"]
         filtered_items = items.filter(tags=tag)
         context["items"] = filtered_items
+        context["tag"] = tag
         return context
 
 
