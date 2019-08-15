@@ -12,7 +12,9 @@ class TaggedItemListView(ItemListView):
     template_name = "products/item_tag.html"
 
     def get_context_data(self, **kwargs):
-        assert False, self.kwargs
+        tag_slug = self.kwargs["tag_slug"]
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        assert False, repr(tag)
         context = super().get_context_data(**kwargs)
         return context
 
