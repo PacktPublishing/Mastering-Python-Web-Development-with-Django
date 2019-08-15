@@ -15,7 +15,9 @@ class TaggedItemListView(ItemListView):
         tag_slug = self.kwargs["tag_slug"]
         tag = get_object_or_404(Tag, slug=tag_slug)
         context = super().get_context_data(**kwargs)
-        assert False, context["items"]
+        items = context["items"]
+        filtered_items = items.filter(tags=tag)
+        assert False, filtered_items
         return context
 
 
