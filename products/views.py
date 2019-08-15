@@ -17,7 +17,7 @@ class TaggedItemListView(ItemListView):
         context = super().get_context_data(**kwargs)
         items = context["items"]
         filtered_items = items.filter(tags=tag)
-        assert False, filtered_items
+        context["items"] = filtered_items
         return context
 
 
