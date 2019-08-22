@@ -23,7 +23,7 @@ class TaggedItemListView(ItemListView):
 
 
 class SearchItemListView(ItemListView):
-    pass
+    template_name = "products/item_search.html"
 
 
 def item_detail(request, item_slug):
