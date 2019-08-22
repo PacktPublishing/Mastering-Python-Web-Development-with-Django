@@ -24,9 +24,13 @@ class TaggedItemListView(ItemListView):
 
 class SearchItemListView(ItemListView):
     template_name = "products/item_search.html"
+    search_term = None
     def get_queryset(self, **kwargs):
-        assert False, self.request.GET
         queryset = super().get_queryset(**kwargs)
+        if "q" in self.request.GET:
+            self.search_term = self.request.GET["q"]
+            assert False, self.search_term
+        return queryset
 
 
 def item_detail(request, item_slug):
