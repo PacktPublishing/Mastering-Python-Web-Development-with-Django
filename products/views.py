@@ -33,6 +33,11 @@ class SearchItemListView(ItemListView):
             queryset = queryset.filter(name__icontains=self.search_term)
         return queryset
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["search_term"] = self.search_term
+        return context
+
 
 def item_detail(request, item_slug):
     item = get_object_or_404(Item, slug=item_slug)
