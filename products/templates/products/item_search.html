@@ -14,7 +14,7 @@
         {% for item in items %}
             <li><a href="{% url 'item_detail' item_slug=item.slug %}">{{ item.name }}</a></li>
         {% empty %}
-            <li>You don't have any items in this shop</li>
+            <li>Couldn't find any available items</li>
         {% endfor %}
     </ul>
 </body>
