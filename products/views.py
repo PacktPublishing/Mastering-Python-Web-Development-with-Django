@@ -25,7 +25,6 @@ class TaggedItemListView(ItemListView):
 class SearchItemListView(ItemListView):
     template_name = "products/item_search.html"
     def get_queryset(self, **kwargs):
-        import ipdb; ipdb.set_trace()
         queryset = super().get_queryset(**kwargs)
 
 
