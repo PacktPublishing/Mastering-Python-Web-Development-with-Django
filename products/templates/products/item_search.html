@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Results for {{ q }}</title>
+    <title>Results for {{ search_term }}</title>
 </head>
 <body>
     <h1>Search</h1>
     <form method="GET" action="">
         <input name="q" type="text" value="{{ search_term }}">
     </form>
-    <h1>Results for {{ q }}</h1>
+    <h1>Results for {{ search_term }}</h1>
     <ul>
         {% for item in items %}
             <li><a href="{% url 'item_detail' item_slug=item.slug %}">{{ item.name }}</a></li>
