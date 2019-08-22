@@ -24,11 +24,13 @@ class TaggedItemListView(ItemListView):
 
 class SearchItemListView(ItemListView):
     template_name = "products/item_search.html"
+    search_term = None
+
     def get_queryset(self, **kwargs):
         queryset = super().get_queryset(**kwargs)
         if "q" in self.request.GET:
-            search_term = self.request.GET["q"]
-            queryset = queryset.filter(name__icontains=search_term)
+            self.search_term = self.request.GET["q"]
+            queryset = queryset.filter(name__icontains=self.search_term)
         return queryset
 
 
