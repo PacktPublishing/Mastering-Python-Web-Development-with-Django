@@ -28,7 +28,7 @@ class SearchItemListView(ItemListView):
         queryset = super().get_queryset(**kwargs)
         if "q" in self.request.GET:
             search_term = self.request.GET["q"]
-            assert False, search_term
+            queryset = queryset.filter(name__icontains=search_term)
         return queryset
 
 
