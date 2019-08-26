@@ -1,0 +1,63 @@
+[
+{
+    "model": "products.tag",
+    "pk": 8,
+    "fields": {
+        "name": "Stylish Hats (Tag)",
+        "slug": "stylish-hats-tag"
+    }
+},
+{
+    "model": "products.tag",
+    "pk": 9,
+    "fields": {
+        "name": "Fancy Accessories (Other)",
+        "slug": "fancy-accessories-other"
+    }
+},
+{
+    "model": "products.item",
+    "pk": 3,
+    "fields": {
+        "name": "Top Hat (VTI)",
+        "slug": "top-hat-vti",
+        "description": "A fancy hat for formal occasions",
+        "image": "images/rubiks_cube_n5alOss.jpg",
+        "price": "20.00",
+        "show_on_website": true,
+        "tags": [
+            8
+        ]
+    }
+},
+{
+    "model": "products.item",
+    "pk": 4,
+    "fields": {
+        "name": "Walking Cane (VUTI)",
+        "slug": "walking-cane-vuti",
+        "description": "The perfect accessory",
+        "image": "images/rubiks_cube_HbEmrvv.jpg",
+        "price": "15.00",
+        "show_on_website": true,
+        "tags": [
+            9
+        ]
+    }
+},
+{
+    "model": "products.item",
+    "pk": 5,
+    "fields": {
+        "name": "Baseball Cap (ITI)",
+        "slug": "baseball-cap-iti",
+        "description": "The All-American classic",
+        "image": "images/rubiks_cube_AKdgn4H.jpg",
+        "price": "10.00",
+        "show_on_website": false,
+        "tags": [
+            8
+        ]
+    }
+}
+]
