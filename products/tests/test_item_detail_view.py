@@ -6,4 +6,4 @@ class TestItemDetailView(TestCase):
         """
         You can access an item including expected content and tags
         """
-        self.assertFalse(True)
+        a = "cheese" + 1
