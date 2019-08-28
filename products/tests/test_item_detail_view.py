@@ -1,5 +1,5 @@
 from django.test import TestCase, Client
-
+from django.urls import reverse
 
 class TestItemDetailView(TestCase):
     def test_you_can_access_an_item(self):
@@ -7,5 +7,6 @@ class TestItemDetailView(TestCase):
         You can access an item including expected content and tags
         """
         client = Client()
-        response = client.get('/')
+        url = reverse('item_detail', kwargs={'item_slug':'top-hat-vti'})
+        response = client.get(url)
         self.assertFalse(response.content)
