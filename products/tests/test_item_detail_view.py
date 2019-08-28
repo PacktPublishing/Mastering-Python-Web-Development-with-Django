@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import TestCase, Client
 
 
 class TestItemDetailView(TestCase):
@@ -6,4 +6,6 @@ class TestItemDetailView(TestCase):
         """
         You can access an item including expected content and tags
         """
-        a = "cheese" + 1
+        client = Client()
+        response = client.get('/')
+        self.assertFalse(response.content)
