@@ -10,4 +10,4 @@ class TestItemDetailView(TestCase):
         client = Client()
         url = reverse('item_detail', kwargs={'item_slug':'top-hat-vti'})
         response = client.get(url)
-        self.assertFalse(response.content)
+        self.assertTrue("Top Hat (VTI)" in str(response.content))
