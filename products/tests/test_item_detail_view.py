@@ -2,6 +2,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 
 class TestItemDetailView(TestCase):
+    fixtures = ["products/tests/fixtures/basic.json"]
     def test_you_can_access_an_item(self):
         """
         You can access an item including expected content and tags
