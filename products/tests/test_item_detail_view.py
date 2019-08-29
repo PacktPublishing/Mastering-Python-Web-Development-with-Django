@@ -19,3 +19,4 @@ class TestItemDetailView(TestCase):
         client = Client()
         url = reverse('item_detail', kwargs={'item_slug':'not-a-real-item'})
         response = client.get(url)        
+        self.assertEqual(response.status_code, 404)
