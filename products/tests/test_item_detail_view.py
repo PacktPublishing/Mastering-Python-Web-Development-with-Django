@@ -14,3 +14,8 @@ class TestItemDetailView(TestCase):
         self.assertTrue("A fancy hat for formal occasions" in str(response.content))
         tag_url = reverse('item_tag', kwargs={'tag_slug': 'stylish-hats-tag'})
         self.assertTrue(tag_url in str(response.content))
+
+    def test_you_cannot_access_a_non_existent_item(self):
+        client = Client()
+        url = reverse('item_detail', kwargs={'item_slug':'not-a-real-item'})
+        response = client.get(url)        
