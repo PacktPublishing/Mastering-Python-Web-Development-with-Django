@@ -20,3 +20,9 @@ class TestItemDetailView(TestCase):
         url = reverse('item_detail', kwargs={'item_slug':'not-a-real-item'})
         response = client.get(url)        
         self.assertEqual(response.status_code, 404)
+
+    def test_you_cannot_access_an_invisible_item(self):
+        client = Client()
+        url = reverse('item_detail', kwargs={'item_slug':'baseball-cap-iti'})
+        response = client.get(url)        
+        self.assertEqual(response.status_code, 404)
