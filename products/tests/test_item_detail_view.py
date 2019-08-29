@@ -12,3 +12,4 @@ class TestItemDetailView(TestCase):
         response = client.get(url)
         self.assertTrue("Top Hat (VTI)" in str(response.content))
         self.assertTrue("A fancy hat for formal occasions" in str(response.content))
+        tag_url = reverse('item_tag', kwargs={'tag_slug': 'stylish-hats-tag'})
