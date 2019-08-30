@@ -8,3 +8,6 @@ class TestTaggedItemListView(TestCase):
         client = Client()
         url = reverse('item_tag', kwargs={'tag_slug':'stylish-hats-tag'})
         response = client.get(url)
+        self.assertIn("Top Hat (VTI)", str(response.content))
+        top_hat_url = reverse("item_detail", kwargs={"item_slug": "top-hat-vti"})
+        self.assertIn(top_hat_url, str(response.content))
