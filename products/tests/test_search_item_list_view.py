@@ -20,3 +20,8 @@ class TestSearchItemListView(TestCase):
         self.assertNotIn("Top Hat (VTI)", str(response.content))
         top_hat_url = reverse("item_detail", kwargs={"item_slug": "top-hat-vti"})
         self.assertNotIn(top_hat_url, str(response.content))
+
+    def test_non_existant_item_gets_no_results(self):
+        client = Client()
+        url = reverse('item_search')
+        response = client.get(url, {"q": "cane"})
