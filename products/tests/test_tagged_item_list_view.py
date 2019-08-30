@@ -11,3 +11,8 @@ class TestTaggedItemListView(TestCase):
         self.assertIn("Top Hat (VTI)", str(response.content))
         top_hat_url = reverse("item_detail", kwargs={"item_slug": "top-hat-vti"})
         self.assertIn(top_hat_url, str(response.content))
+
+    def test_that_you_cannot_see_items_that_are_not_tagged_in_the_list(self):
+        client = Client()
+        url = reverse('item_tag', kwargs={'tag_slug':'stylish-hats-tag'})
+        response = client.get(url)
