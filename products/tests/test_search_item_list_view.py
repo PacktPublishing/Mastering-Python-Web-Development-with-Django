@@ -20,6 +20,3 @@ class TestSearchItemListView(TestCase):
         self.assertNotIn("Top Hat (VTI)", str(response.content))
         top_hat_url = reverse("item_detail", kwargs={"item_slug": "top-hat-vti"})
         self.assertNotIn(top_hat_url, str(response.content))
-        self.assertNotIn("Baseball Cap (ITI)", str(response.content))
-        baseball_url = reverse("item_detail", kwargs={"item_slug": "baseball-cap-iti"})
-        self.assertNotIn(baseball_url, str(response.content))
