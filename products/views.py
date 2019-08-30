@@ -6,6 +6,7 @@ from .models import Item, Tag
 class ItemListView(ListView):
     context_object_name = 'items'
     model = Item
+    queryset = Item.objects.filter(show_on_website=True)
 
 
 class TaggedItemListView(ItemListView):
