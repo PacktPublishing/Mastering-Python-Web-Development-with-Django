@@ -19,3 +19,8 @@ class TestTaggedItemListView(TestCase):
         self.assertNotIn("Walking Cane (VUTI)", str(response.content))
         walking_cane_url = reverse("item_detail", kwargs={"item_slug": "walking-cane-vuti"})
         self.assertNotIn(walking_cane_url, str(response.content))
+
+    def test_that_you_cannot_see_tagged_items_that_are_not_visible_in_the_list(self):
+        client = Client()
+        url = reverse('item_tag', kwargs={'tag_slug':'stylish-hats-tag'})
+        response = client.get(url)
