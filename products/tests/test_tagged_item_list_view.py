@@ -24,3 +24,6 @@ class TestTaggedItemListView(TestCase):
         client = Client()
         url = reverse('item_tag', kwargs={'tag_slug':'stylish-hats-tag'})
         response = client.get(url)
+        self.assertNotIn("Baseball Cap (ITI)", str(response.content))
+        baseball_url = reverse("item_detail", kwargs={"item_slug": "baseball-cap-iti"})
+        self.assertNotIn(baseball_url, str(response.content))
