@@ -9,3 +9,6 @@ class TestSearchItemListView(TestCase):
         client = Client()
         url = reverse('item_search')
         response = client.get(url, {"q": "cane"})
+        self.assertIn("Walking Cane (VUTI)", str(response.content))
+        walking_cane_url = reverse("item_detail", kwargs={"item_slug": "walking-cane-vuti"})
+        self.assertIn(walking_cane_url, str(response.content))
