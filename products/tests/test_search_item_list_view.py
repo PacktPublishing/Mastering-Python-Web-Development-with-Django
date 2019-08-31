@@ -24,4 +24,5 @@ class TestSearchItemListView(TestCase):
     def test_non_existant_item_gets_no_results(self):
         client = Client()
         url = reverse('item_search')
-        response = client.get(url, {"q": "cane"})
+        response = client.get(url, {"q": "boots"})
+        self.assertIn("Couldn't find any available items", str(response.content))
