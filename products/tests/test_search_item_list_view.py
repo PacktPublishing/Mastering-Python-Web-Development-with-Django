@@ -25,4 +25,4 @@ class TestSearchItemListView(TestCase):
         client = Client()
         url = reverse('item_search')
         response = client.get(url, {"q": "boots"})
-        self.assertFalse(response.context_data)
+        self.assertFalse(response.context_data['items'])
