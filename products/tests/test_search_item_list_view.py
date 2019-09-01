@@ -26,3 +26,8 @@ class TestSearchItemListView(TestCase):
         url = reverse('item_search')
         response = client.get(url, {"q": "boots"})
         self.assertFalse(response.context_data['items'])
+
+    def test_that_you_cannot_find_items_that_are_not_visible(self):
+        client = Client()
+        url = reverse('item_search')
+        response = client.get(url, {"q": "baseball"})
